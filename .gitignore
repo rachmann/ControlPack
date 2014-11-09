@@ -12,11 +12,20 @@ $RECYCLE.BIN/
 *.cab
 *.msi
 *.msm
+
+# build files
+bin/
+obj/
+ControlPack/bin/
+ControlPack/obj/
+packages/
+
 *.msp
 
 # =========================
 # Operating System Files
 # =========================
+
 
 # OSX
 # =========================

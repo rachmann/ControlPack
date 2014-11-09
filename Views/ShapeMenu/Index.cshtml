@@ -1,0 +1,83 @@
+﻿@model ControlPack.Models.ShapeMenu
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@Html.EditorFor(model => model, "ShapeMenu")
+
+@section Scripts
+{
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        var displayDiv = document.getElementById("ShapeMenuDiv");
+        if (displayDiv) {
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(35, displayDiv.clientWidth / displayDiv.clientHeight, 0.1, 1000);
+
+            var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+            renderer.setSize(displayDiv.clientWidth, displayDiv.clientHeight);
+            displayDiv.appendChild(renderer.domElement);
+
+            renderer.setClearColor(0xd2d2d2, .1);
+
+            var materials = [
+                new THREE.MeshLambertMaterial({
+                    map: THREE.ImageUtils.loadTexture('@Url.Content("~/Content/ControlPack/questions.png")')
+                }),
+                new THREE.MeshLambertMaterial({
+                    map: THREE.ImageUtils.loadTexture('@Url.Content("~/Content/ControlPack/contact.png")')
+                }),
+                    new THREE.MeshLambertMaterial({
+                        map: THREE.ImageUtils.loadTexture('@Url.Content("~/Content/ControlPack/settings.png")')
+                    }),
+                new THREE.MeshLambertMaterial({
+                    map: THREE.ImageUtils.loadTexture('@Url.Content("~/Content/ControlPack/status.png")')
+                }),
+                    new THREE.MeshLambertMaterial({
+                        map: THREE.ImageUtils.loadTexture('@Url.Content("~/Content/ControlPack/lock.png")')
+                    }),
+                    new THREE.MeshLambertMaterial({
+                        map: THREE.ImageUtils.loadTexture('@Url.Content("~/Content/ControlPack/metal.png")')
+                    })
+            ];
+
+            var cube = new THREE.Mesh(
+                new THREE.BoxGeometry(44, 44, 44),
+                new THREE.MeshFaceMaterial(materials)
+             );
+            scene.add(cube);
+            //var directionalLight = new THREE.DirectionalLight(0xffffff, .8);
+            //directionalLight.position.set(00, 100, 200);
+            //scene.add(directionalLight);
+            var ambientLightlight = new THREE.AmbientLight(0xeeeeee);
+            scene.add(ambientLightlight);
+
+            camera.position.z = 155;
+
+            //  multiple viewports
+            //renderer.clear();
+            //renderer.render( scene, camera )
+            //renderer.render( sceneHelpers, camera )
+            //renderer.render( sceneControls, camera )
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+            var render = function () {
+                requestAnimationFrame(render);
+
+                //cube.rotation.x += 0.02;
+                //cube.rotation.y += 0.02;
+                //cube.rotation.z += 0.02;
+                controls.update();
+                renderer.render(scene, camera);
+            };
+
+            render();
+        }
+    });
+</script>
+}

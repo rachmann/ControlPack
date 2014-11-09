@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B89D491A-1F10-4CA8-A63C-57B2061980A9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControlPack</RootNamespace>
+    <AssemblyName>ControlPack</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.34\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SimpleCRUD">
+      <HintPath>..\packages\Dapper.SimpleCRUD.1.4.1\lib\net40\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\ShapeMenuController.cs" />
+    <Compile Include="Models\ShapeMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ControlPackDatabase.mdf" />
+    <Content Include="App_Data\ControlPackDatabase_log.ldf">
+      <DependentUpon>ControlPackDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ControlPack\contact.png" />
+    <Content Include="Content\ControlPack\lock.png" />
+    <Content Include="Content\ControlPack\metal.png" />
+    <Content Include="Content\ControlPack\questions.png" />
+    <Content Include="Content\ControlPack\settings.png" />
+    <Content Include="Content\ControlPack\status.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Models\bootstrap.min.css" />
+    <Content Include="Content\ControlPack\ShapeMenu.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\readme.txt" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\three\three.js" />
+    <Content Include="Scripts\three\three.min.js" />
+    <Content Include="Scripts\three\js\AudioObject.js" />
+    <Content Include="Scripts\three\js\BlendCharacter.js" />
+    <Content Include="Scripts\three\js\BlendCharacterGui.js" />
+    <Content Include="Scripts\three\js\cameras\CombinedCamera.js" />
+    <Content Include="Scripts\three\js\Car.js" />
+    <Content Include="Scripts\three\js\Cloth.js" />
+    <Content Include="Scripts\three\js\controls\DeviceOrientationControls.js" />
+    <Content Include="Scripts\three\js\controls\EditorControls.js" />
+    <Content Include="Scripts\three\js\controls\FirstPersonControls.js" />
+    <Content Include="Scripts\three\js\controls\FlyControls.js" />
+    <Content Include="Scripts\three\js\controls\OculusControls.js" />
+    <Content Include="Scripts\three\js\controls\OrbitControls.js" />
+    <Content Include="Scripts\three\js\controls\OrthographicTrackballControls.js" />
+    <Content Include="Scripts\three\js\controls\PointerLockControls.js" />
+    <Content Include="Scripts\three\js\controls\TrackballControls.js" />
+    <Content Include="Scripts\three\js\controls\TransformControls.js" />
+    <Content Include="Scripts\three\js\controls\VRControls.js" />
+    <Content Include="Scripts\three\js\crossfade\gui.js" />
+    <Content Include="Scripts\three\js\crossfade\scenes.js" />
+    <Content Include="Scripts\three\js\crossfade\transition.js" />
+    <Content Include="Scripts\three\js\CurveExtras.js" />
+    <Content Include="Scripts\three\js\curves\NURBSCurve.js" />
+    <Content Include="Scripts\three\js\curves\NURBSSurface.js" />
+    <Content Include="Scripts\three\js\curves\NURBSUtils.js" />
+    <Content Include="Scripts\three\js\Detector.js" />
+    <Content Include="Scripts\three\js\effects\AnaglyphEffect.js" />
+    <Content Include="Scripts\three\js\effects\AsciiEffect.js" />
+    <Content Include="Scripts\three\js\effects\OculusRiftEffect.js" />
+    <Content Include="Scripts\three\js\effects\ParallaxBarrierEffect.js" />
+    <Content Include="Scripts\three\js\effects\StereoEffect.js" />
+    <Content Include="Scripts\three\js\effects\VREffect.js" />
+    <Content Include="Scripts\three\js\exporters\BufferGeometryExporter.js" />
+    <Content Include="Scripts\three\js\exporters\GeometryExporter.js" />
+    <Content Include="Scripts\three\js\exporters\HTMLExporter.js" />
+    <Content Include="Scripts\three\js\exporters\MaterialExporter.js" />
+    <Content Include="Scripts\three\js\exporters\ObjectExporter.js" />
+    <Content Include="Scripts\three\js\exporters\OBJExporter.js" />
+    <Content Include="Scripts\three\js\exporters\SceneExporter.js" />
+    <Content Include="Scripts\three\js\exporters\STLBinaryExporter.js" />
+    <Content Include="Scripts\three\js\exporters\STLExporter.js" />
+    <Content Include="Scripts\three\js\exporters\TypedGeometryExporter.js" />
+    <Content Include="Scripts\three\js\geometries\ConvexGeometry.js" />
+    <Content Include="Scripts\three\js\geometries\hilbert2D.js" />
+    <Content Include="Scripts\three\js\geometries\hilbert3D.js" />
+    <Content Include="Scripts\three\js\ImprovedNoise.js" />
+    <Content Include="Scripts\three\js\libs\dat.gui.min.js" />
+    <Content Include="Scripts\three\js\libs\msgpack-js.js" />
+    <Content Include="Scripts\three\js\libs\pnltri.min.js" />
+    <Content Include="Scripts\three\js\libs\require.js" />
+    <Content Include="Scripts\three\js\libs\stats.min.js" />
+    <Content Include="Scripts\three\js\libs\system.min.js" />
+    <Content Include="Scripts\three\js\libs\tween.min.js" />
+    <Content Include="Scripts\three\js\loaders\AssimpJSONLoader.js" />
+    <Content Include="Scripts\three\js\loaders\AWDLoader.js" />
+    <Content Include="Scripts\three\js\loaders\BabylonLoader.js" />
+    <Content Include="Scripts\three\js\loaders\BinaryLoader.js" />
+    <Content Include="Scripts\three\js\loaders\ColladaLoader.js" />
+    <Content Include="Scripts\three\js\loaders\ctm\ctm.js" />
+    <Content Include="Scripts\three\js\loaders\ctm\CTMLoader.js" />
+    <Content Include="Scripts\three\js\loaders\ctm\CTMWorker.js" />
+    <Content Include="Scripts\three\js\loaders\ctm\license\js-lzma.txt" />
+    <Content Include="Scripts\three\js\loaders\ctm\license\js-openctm.txt" />
+    <Content Include="Scripts\three\js\loaders\ctm\license\OpenCTM.txt" />
+    <Content Include="Scripts\three\js\loaders\ctm\lzma.js" />
+    <Content Include="Scripts\three\js\loaders\DDSLoader.js" />
+    <Content Include="Scripts\three\js\loaders\gltf\glTF-parser.js" />
+    <Content Include="Scripts\three\js\loaders\gltf\glTFAnimation.js" />
+    <Content Include="Scripts\three\js\loaders\gltf\glTFLoader.js" />
+    <Content Include="Scripts\three\js\loaders\gltf\glTFLoaderUtils.js" />
+    <Content Include="Scripts\three\js\loaders\MTLLoader.js" />
+    <Content Include="Scripts\three\js\loaders\OBJLoader.js" />
+    <Content Include="Scripts\three\js\loaders\OBJLoader2.js" />
+    <Content Include="Scripts\three\js\loaders\OBJMTLLoader.js" />
+    <Content Include="Scripts\three\js\loaders\PDBLoader.js" />
+    <Content Include="Scripts\three\js\loaders\PLYLoader.js" />
+    <Content Include="Scripts\three\js\loaders\SceneLoader.js" />
+    <Content Include="Scripts\three\js\loaders\STLLoader.js" />
+    <Content Include="Scripts\three\js\loaders\SVGLoader.js" />
+    <Content Include="Scripts\three\js\loaders\TGALoader.js" />
+    <Content Include="Scripts\three\js\loaders\UTF8Loader.js" />
+    <Content Include="Scripts\three\js\loaders\VRMLLoader.js" />
+    <Content Include="Scripts\three\js\loaders\VTKLoader.js" />
+    <Content Include="Scripts\three\js\MarchingCubes.js" />
+    <Content Include="Scripts\three\js\math\ColorConverter.js" />
+    <Content Include="Scripts\three\js\math\Lut.js" />
+    <Content Include="Scripts\three\js\MD2Character.js" />
+    <Content Include="Scripts\three\js\MD2CharacterComplex.js" />
+    <Content Include="Scripts\three\js\Mirror.js" />
+    <Content Include="Scripts\three\js\modifiers\ExplodeModifier.js" />
+    <Content Include="Scripts\three\js\modifiers\SubdivisionModifier.js" />
+    <Content Include="Scripts\three\js\modifiers\TessellateModifier.js" />
+    <Content Include="Scripts\three\js\Ocean.js" />
+    <Content Include="Scripts\three\js\Octree.js" />
+    <Content Include="Scripts\three\js\ParametricGeometries.js" />
+    <Content Include="Scripts\three\js\postprocessing\BloomPass.js" />
+    <Content Include="Scripts\three\js\postprocessing\BokehPass.js" />
+    <Content Include="Scripts\three\js\postprocessing\DotScreenPass.js" />
+    <Content Include="Scripts\three\js\postprocessing\EffectComposer.js" />
+    <Content Include="Scripts\three\js\postprocessing\FilmPass.js" />
+    <Content Include="Scripts\three\js\postprocessing\GlitchPass.js" />
+    <Content Include="Scripts\three\js\postprocessing\MaskPass.js" />
+    <Content Include="Scripts\three\js\postprocessing\RenderPass.js" />
+    <Content Include="Scripts\three\js\postprocessing\SavePass.js" />
+    <Content Include="Scripts\three\js\postprocessing\ShaderPass.js" />
+    <Content Include="Scripts\three\js\postprocessing\TexturePass.js" />
+    <Content Include="Scripts\three\js\PRNG.js" />
+    <Content Include="Scripts\three\js\renderers\CSS2DRenderer.js" />
+    <Content Include="Scripts\three\js\renderers\CSS3DRenderer.js" />
+    <Content Include="Scripts\three\js\renderers\RaytracingRenderer.js" />
+    <Content Include="Scripts\three\js\renderers\SoftwareRenderer.js" />
+    <Content Include="Scripts\three\js\renderers\SVGRenderer.js" />
+    <Content Include="Scripts\three\js\renderers\WebGLDeferredRenderer.js" />
+    <Content Include="Scripts\three\js\renderers\WebGLRenderer3.js" />
+    <Content Include="Scripts\three\js\ShaderDeferred.js" />
+    <Content Include="Scripts\three\js\ShaderGodRays.js" />
+    <Content Include="Scripts\three\js\ShaderSkin.js" />
+    <Content Include="Scripts\three\js\shaders\BasicShader.js" />
+    <Content Include="Scripts\three\js\shaders\BleachBypassShader.js" />
+    <Content Include="Scripts\three\js\shaders\BlendShader.js" />
+    <Content Include="Scripts\three\js\shaders\BokehShader.js" />
+    <Content Include="Scripts\three\js\shaders\BokehShader2.js" />
+    <Content Include="Scripts\three\js\shaders\BrightnessContrastShader.js" />
+    <Content Include="Scripts\three\js\shaders\ColorCorrectionShader.js" />
+    <Content Include="Scripts\three\js\shaders\ColorifyShader.js" />
+    <Content Include="Scripts\three\js\shaders\ConvolutionShader.js" />
+    <Content Include="Scripts\three\js\shaders\CopyShader.js" />
+    <Content Include="Scripts\three\js\shaders\DigitalGlitch.js" />
+    <Content Include="Scripts\three\js\shaders\DOFMipMapShader.js" />
+    <Content Include="Scripts\three\js\shaders\DotScreenShader.js" />
+    <Content Include="Scripts\three\js\shaders\EdgeShader.js" />
+    <Content Include="Scripts\three\js\shaders\EdgeShader2.js" />
+    <Content Include="Scripts\three\js\shaders\FilmShader.js" />
+    <Content Include="Scripts\three\js\shaders\FocusShader.js" />
+    <Content Include="Scripts\three\js\shaders\FresnelShader.js" />
+    <Content Include="Scripts\three\js\shaders\FXAAShader.js" />
+    <Content Include="Scripts\three\js\shaders\HorizontalBlurShader.js" />
+    <Content Include="Scripts\three\js\shaders\HorizontalTiltShiftShader.js" />
+    <Content Include="Scripts\three\js\shaders\HueSaturationShader.js" />
+    <Content Include="Scripts\three\js\shaders\KaleidoShader.js" />
+    <Content Include="Scripts\three\js\shaders\LuminosityShader.js" />
+    <Content Include="Scripts\three\js\shaders\MirrorShader.js" />
+    <Content Include="Scripts\three\js\shaders\NormalMapShader.js" />
+    <Content Include="Scripts\three\js\shaders\OceanShaders.js" />
+    <Content Include="Scripts\three\js\shaders\RGBShiftShader.js" />
+    <Content Include="Scripts\three\js\shaders\SepiaShader.js" />
+    <Content Include="Scripts\three\js\shaders\SSAOShader.js" />
+    <Content Include="Scripts\three\js\shaders\TechnicolorShader.js" />
+    <Content Include="Scripts\three\js\shaders\TriangleBlurShader.js" />
+    <Content Include="Scripts\three\js\shaders\UnpackDepthRGBAShader.js" />
+    <Content Include="Scripts\three\js\shaders\VerticalBlurShader.js" />
+    <Content Include="Scripts\three\js\shaders\VerticalTiltShiftShader.js" />
+    <Content Include="Scripts\three\js\shaders\VignetteShader.js" />
+    <Content Include="Scripts\three\js\ShaderTerrain.js" />
+    <Content Include="Scripts\three\js\ShaderToon.js" />
+    <Content Include="Scripts\three\js\SimplexNoise.js" />
+    <Content Include="Scripts\three\js\SimulationRenderer.js" />
+    <Content Include="Scripts\three\js\SkyShader.js" />
+    <Content Include="Scripts\three\js\Sparks.js" />
+    <Content Include="Scripts\three\js\TypedArrayUtils.js" />
+    <Content Include="Scripts\three\js\UCSCharacter.js" />
+    <Content Include="Scripts\three\js\utils\GeometryUtils.js" />
+    <Content Include="Scripts\three\js\utils\UVsUtils.js" />
+    <Content Include="Scripts\three\js\WaterShader.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\BoxGeometry2.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\Geometry2.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\Geometry2Loader.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\Geometry3.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\Geometry4.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\Geometry5.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\Geometry5b.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\IndexedGeometry3.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\IndexedGeometry5.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\IndexedPlaneGeometry5.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\PlaneBufferGeometry.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\PlaneGeometry.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\PlaneGeometry2.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\PlaneGeometry2b.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\PlaneGeometry3.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\PlaneGeometry5.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\PlaneGeometry6.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\PlaneGeometry99.js" />
+    <Content Include="Scripts\three\js\wip\benchmark\TypedGeometry.js" />
+    <Content Include="Scripts\three\js\wip\CircleTypedGeometry.js" />
+    <Content Include="Scripts\three\js\wip\GeometryEditor.js" />
+    <Content Include="Scripts\three\js\wip\IndexedTypedGeometry.js" />
+    <Content Include="Scripts\three\js\wip\PlaneTypedGeometry.js" />
+    <Content Include="Scripts\three\js\wip\proxies\MultiColor.js" />
+    <Content Include="Scripts\three\js\wip\proxies\MultiVector3.js" />
+    <Content Include="Scripts\three\js\wip\proxies\ProxyColor.js" />
+    <Content Include="Scripts\three\js\wip\proxies\ProxyFace3.js" />
+    <Content Include="Scripts\three\js\wip\proxies\ProxyVector2.js" />
+    <Content Include="Scripts\three\js\wip\proxies\ProxyVector3.js" />
+    <Content Include="Scripts\three\js\wip\proxies\ProxyVector4.js" />
+    <Content Include="Scripts\three\js\wip\ProxyGeometry.js" />
+    <Content Include="Scripts\three\js\wip\TypedGeometry.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\ShapeMenu\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ShapeMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50231</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50231/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
